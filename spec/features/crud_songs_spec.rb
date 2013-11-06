@@ -17,7 +17,7 @@ feature "CRUD for Songs" do
       end
 
       page.should have_content("Billie Jean")
-      page.should have_content("Michael Jackon")
+      page.should have_content("Michael Jackson")
     end
   end
 

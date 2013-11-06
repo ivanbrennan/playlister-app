@@ -2,7 +2,11 @@
   "RSpec": {
     "coverage": {
     },
+<<<<<<< HEAD
     "timestamp": 1383712684
+=======
+    "timestamp": 1383712603
+>>>>>>> 4-artist-name-in-song-form
   },
   "Cucumber Features": {
     "coverage": {

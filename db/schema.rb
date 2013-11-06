@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106022346) do
+ActiveRecord::Schema.define(version: 20131106031435) do
+
+  create_table "artists", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "songs", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "artist_id"
   end
+
+  add_index "songs", ["artist_id"], name: "index_songs_on_artist_id"
 
 end

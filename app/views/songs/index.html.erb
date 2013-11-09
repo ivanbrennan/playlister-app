@@ -1,27 +1,22 @@
-<h1>Listing songs</h1>
+<%= form_for(@song) do |f| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
 
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.name %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="field">
+    <label for="song_artist_name">Artist Name</label><br>
+    <input type="text" name="song[artist_name]" id="song_artist_name">
+  </div>
 
-<br>
+  <div class="field">
+    <label for="song_artist_name">Comma Separated Genres</label><br>
+    <input type="text" name="song[genre_names]" id="song_genre_names">
+  </div>
 
-<%= link_to 'New Song', new_song_path %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
